@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "modifyHeaders",
+      "requestHeaders": [
+        {
+          "header": "a",
+          "operation": "set",
+          "value": "b"
+        }
+      ],
+      "responseHeaders": [
+        {
+          "header": "c",
+          "operation": "set",
+          "value": "d"
+        }
+      ]
+    },
+    "condition": {
+      "urlFilter": "|*://*.baidu.com/*",
+      "resourceTypes": ["main_frame", "sub_frame","xmlhttprequest"]
+    }
+  }
+]
