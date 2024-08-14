@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.all {
+    width: 280px;
+    height: 400px;
+}
+.title {
+    background-color: #009688;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: "Segoe UI";
+    padding: 3px;
+}
