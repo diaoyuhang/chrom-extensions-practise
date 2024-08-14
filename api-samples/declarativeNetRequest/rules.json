@@ -20,7 +20,7 @@
       ]
     },
     "condition": {
-      "urlFilter": "|*://*.baidu.com/*",
+      "urlFilter": "|*://adp-paas.apps.digiwincloud.com.cn/*",
       "resourceTypes": ["main_frame", "sub_frame","xmlhttprequest"]
     }
   }
