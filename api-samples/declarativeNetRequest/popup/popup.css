@@ -15,3 +15,53 @@
     font-family: "Segoe UI";
     padding: 3px;
 }
+.container {
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.header {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 13px;
+    height: 30px;
+}
+.header span {
+    line-height: 30px;
+}
+
+.contentBody {
+    margin: 5px;
+    height: 32px;
+
+}
+
+.bodyTop {
+    border: 1px solid gray;
+    height: 32px;
+}
+
+#domainInput {
+    border: none;
+    box-shadow: none;
+    outline: none;
+    height: 29px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#domainInput:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+#domainAddButton {
+    height: 29px;
+    background-color: #4caf50;
+    color: white;
+    width: 29px;
+    font-size: 20px;
+    border: 0px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
