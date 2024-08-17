@@ -15,6 +15,19 @@ chrome.runtime.sendMessage({
     }
 })*/
 
+function sendMessageUpdateRule(domains){
+    chrome.runtime.sendMessage({
+        action: 'updateRule',
+        domains:domains
+    },function(response){
+        if (response.success) {
+            console.log(`Rule for added successfully`);
+        } else {
+            console.error('Failed to add rule');
+        }
+    });
+}
+
 function addDomain(){
     const inputDom = document.getElementById("domainInput");
     const domainValue = inputDom.value;
@@ -32,39 +45,60 @@ async function setStorageDomain(domain) {
             return;
         }
     }
-
+    const newDomains = [...domains, domain];
     await chrome.storage.local.set({
-        domains: [...domains, domain]
+        domains: newDomains
     });
+
+    showDomains(newDomains);
+    sendMessageUpdateRule(newDomains);
+
 }
 
-window.onload = async function () {
-    let {domains} = await chrome.storage.local.get("domains");
-    console.log(domains)
-    if (domains === undefined) {
-        console.log("这是domains");
-        domains = []
-        chrome.storage.local.set({
-            domains: domains
-        });
-    }
-    let {e} = await chrome.storage.local.get("domains");
-    console.log(e);
-    const template = document.getElementById("li_template");
+async function removeDomain(domain) {
+    const {domains} = await chrome.storage.local.get("domains");
+    const newDomains = domains.filter(d => d !== domain);
 
+    await chrome.storage.local.set({
+        domains: newDomains
+    });
+
+    showDomains(newDomains);
+    sendMessageUpdateRule(newDomains);
+
+}
+
+function showDomains(domains) {
+    const template = document.getElementById("li_template");
     const elements = new Set();
     for (let index in domains) {
         const element = template.content.firstElementChild.cloneNode(true);
 
-        if (domains[index].length > 30){
-            element.querySelector(".domain").textContent = domains[index].substring(0,30);
-        }else{
-            element.querySelector(".domain").textContent = domains[index];
+        let content = domains[index];
+        if (domains[index].length > 30) {
+            content = domains[index].substring(0, 30);
         }
+        element.querySelector(".domain").textContent = domains[index];
+        element.querySelector("#addBtn").addEventListener('click',()=>{
+           removeDomain(domains[index]);
+        });
         elements.add(element);
     }
-
+    document.querySelector("ul").innerHTML = "";
     document.querySelector("ul").append(...elements);
+}
+
+window.onload = async function () {
+    let {domains} = await chrome.storage.local.get("domains");
+
+    if (domains === undefined) {
+        domains = []
+        await chrome.storage.local.set({
+            domains: domains
+        });
+    }
+
+    showDomains(domains);
 }
 
 document.getElementById('domainAddButton').addEventListener('click', addDomain);
