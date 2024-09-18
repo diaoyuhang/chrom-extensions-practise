@@ -12,10 +12,7 @@
     "storage"
   ],
   "host_permissions": [
-    "https://adp-paas.apps.digiwincloud.com.cn/*",
-    "https://athena-dev-platform-paas.digiwincloud.com.cn/*",
-    "http://localhost:3201/*",
-    "http://localhost:8080/*"
+    "*://*/*"
   ],
   "background": {
     "service_worker": "background.js"

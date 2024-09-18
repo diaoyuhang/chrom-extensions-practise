@@ -9,19 +9,11 @@ function addDynamicRule(domains){
                 type: "modifyHeaders",
                 requestHeaders: [
                     {
-                        header: "a",
-                        operation: "set",
-                        value: "b"
-                    },{
                         header: "origin",
                         operation: "remove",
                     },{
                         header: "referer",
                         operation: "remove",
-                    },{
-                        header: "token",
-                        operation: "set",
-                        value: "PTM6WssfwKw4GM34fMR4nqg9igIOizOw+XIrml7UtZR8Ezcl2IQePp+45XHUEbVz9B2kCwjfDJSrNAhc9+hYsijm/oh/bEp1JT7JBFgXkC+q6zor2NFE2UkViRdZ+zW370KtxUQOGWj5SlxRczHj9V3KEw1F+UOr3H4SrQ14W053FucZGFIdXHlZNHxhq7F2V87pTQAwGEhwVhzBXbhXeX0rsCWK+0e4g7fSl5HXL6AozZ37Bn3KazgiocBm9vMJqQBZpsiA369T7eW1WEgJZpVyTJKxH5m1tIyFvBUKiViqOe1DEQRauKu/Jc35BmoKWOMnGiBdLEYyxCcBu9f66A=="
                     }
                 ],
                 responseHeaders: [
@@ -39,11 +31,6 @@ function addDynamicRule(domains){
                         header: "access-control-allow-origin",
                         operation: "set",
                         value: "*"
-                    },
-                    {
-                        header: "c",
-                        operation: "set",
-                        value: "d"
                     }
                 ]
             },
