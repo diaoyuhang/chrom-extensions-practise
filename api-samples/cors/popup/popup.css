@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.all {
+    width: 280px;
+    height: 400px;
+}
+.title {
+    background-color: #009688;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: "Segoe UI";
+    padding: 3px;
+}
+.container {
+    margin: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    height: 350px;
+}
+.header {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 13px;
+    height: 30px;
+}
+.header span {
+    line-height: 30px;
+}
+
+.contentBody {
+    margin: 5px;
+    height: 32px;
+
+}
+
+.bodyTop {
+    border: 1px solid gray;
+    height: 32px;
+    border-radius: 4px;
+}
+
+#domainInput {
+    border: none;
+    box-shadow: none;
+    outline: none;
+    height: 29px;
+    width: 218px;
+    margin-left: 5px;
+}
+#domainInput:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+#domainAddButton {
+    height: 31px;
+    background-color: #4caf50;
+    color: white;
+    width: 29px;
+    font-size: 20px;
+    border: 0px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.bodyContent {
+    border: 1px solid gray;
+    margin-top: 5px;
+    overflow-y: auto;
+    height: 270px;
+}
+
+.bodyContent li{
+    font-size: 13px;
+    border-bottom: 1px solid gray;
+    height: 26px;
+    line-height: 26px;
+    padding-left: 5px;
+}
+
+.bodyContent li button{
+    width: 20px;
+    float: right;
+    margin-right: 5px;
+    margin-top: 3px;
+}

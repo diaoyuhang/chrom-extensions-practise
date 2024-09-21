@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>域名管理</title>
+    <link rel="stylesheet" href="./popup.css"/>
+
+</head>
+<body>
+<div class="all">
+
+    <template id="li_template">
+
+        <li>
+            <span class="domain">这是域名</span>
+            <button id="addBtn">-</button>
+        </li>
+    </template>
+
+    <div class="title">
+        <span>接口平台</span>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <span>域名管理</span>
+        </div>
+        <hr>
+        <div class="contentBody">
+            <div class="bodyTop">
+                <input type="text" id="domainInput" placeholder="添加域名"/>
+                <button id="domainAddButton" type="button">+</button>
+            </div>
+            <div class="bodyContent">
+                <ul>
+
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+<script src="./popup.js" type="module"></script>
+</html>
