@@ -36,7 +36,7 @@ function addDynamicRule(domains){
             },
             condition: {
                 urlFilter: `|${domains[index]}/*`,
-                resourceTypes: ["main_frame", "sub_frame", "xmlhttprequest"]
+                resourceTypes: ["main_frame", "sub_frame", "xmlhttprequest","other"]
             }
         };
         newRules.push(rule);
